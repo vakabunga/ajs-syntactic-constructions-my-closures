@@ -1,4 +1,4 @@
-import findBy from '../app';
+import findBy from '../findBy';
 
 describe('findBy', () => {
   test('shoul show object which contains required element', () => {
@@ -7,8 +7,7 @@ describe('findBy', () => {
       { name: 'заклинание', type: 'attack', description: ' ' },
       { name: 'урон', type: 'help', description: ' ' },
     ];
-    const finder = findBy('name', 'урон');
-    const result = arr.filter(finder);
+    const result = arr.filter(findBy('name', 'урон'));
     expect(result).toEqual([{ name: 'урон', type: 'help', description: ' ' }]);
   });
 });
